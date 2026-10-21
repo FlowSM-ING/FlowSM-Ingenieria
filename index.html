@@ -1,0 +1,389 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NEXO Ingeniería | Consultoría industrial</title>
+    <meta
+        name="description"
+        content="Servicios de ingeniería, diseño, cálculo y soporte técnico para proyectos industriales."
+    >
+    <meta name="theme-color" content="#101e30">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <header class="header">
+        <a class="brand" href="#inicio" aria-label="NEXO Ingeniería, inicio">
+            <span class="brand-icon">
+                <svg viewBox="0 0 40 40" aria-hidden="true">
+                    <path d="M7 31V9L33 31V9" />
+                    <path d="M7 20H20" />
+                </svg>
+            </span>
+
+            <span class="brand-text">
+                <strong>NEXO</strong>
+                <small>INGENIERÍA & CONSULTORÍA</small>
+            </span>
+        </a>
+
+        <button
+            class="menu-toggle"
+            id="menu-toggle"
+            aria-label="Abrir menú"
+            aria-expanded="false"
+            aria-controls="nav-menu"
+        >
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="nav" id="nav-menu">
+            <a href="#servicios">Servicios</a>
+            <a href="#nosotros">Nosotros</a>
+            <a href="#proyectos">Capacidades</a>
+            <a class="nav-cta" href="#contacto">Hablemos ↗</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="inicio">
+            <div class="hero-content">
+                <div class="eyebrow">
+                    <span class="status-dot"></span>
+                    INGENIERÍA · INDUSTRIA · MINERÍA
+                </div>
+
+                <h1>
+                    Convertimos desafíos técnicos en
+                    <span>soluciones de ingeniería.</span>
+                </h1>
+
+                <p class="hero-description">
+                    Diseño, cálculo y soporte técnico para proyectos
+                    industriales, con foco en la calidad, la eficiencia
+                    y la seguridad.
+                </p>
+
+                <div class="hero-actions">
+                    <a class="button button-primary" href="#contacto">
+                        Consultar un proyecto
+                        <span aria-hidden="true">↗</span>
+                    </a>
+
+                    <a class="button button-secondary" href="#servicios">
+                        Explorar servicios
+                        <span aria-hidden="true">↓</span>
+                    </a>
+                </div>
+
+                <div class="hero-note">
+                    <span class="note-line"></span>
+                    INGENIERÍA CON CRITERIO. SOLUCIONES CON PROPÓSITO.
+                </div>
+            </div>
+
+            <div class="hero-visual" aria-label="Ilustración técnica de una estructura industrial">
+                <div class="visual-top">
+                    <span>ENGINEERING / 001</span>
+                    <span>DISEÑO TÉCNICO</span>
+                </div>
+
+                <svg class="technical-drawing" viewBox="0 0 520 440" role="img"
+                    aria-label="Dibujo esquemático de una estructura metálica tridimensional">
+                    <defs>
+                        <pattern id="grid" width="26" height="26" patternUnits="userSpaceOnUse">
+                            <path d="M26 0H0V26" fill="none" stroke="#8796a7"
+                                stroke-opacity=".16" stroke-width="1"/>
+                        </pattern>
+                    </defs>
+
+                    <rect width="520" height="440" fill="url(#grid)"/>
+
+                    <g fill="none" stroke="#c7d3df" stroke-width="2">
+                        <path d="M95 310L280 365L430 280L245 225Z"/>
+                        <path d="M95 310V135L245 52V225"/>
+                        <path d="M245 52L430 110V280"/>
+                        <path d="M95 135L280 190L430 110"/>
+                        <path d="M280 190V365"/>
+                        <path d="M95 135L280 190L280 365"/>
+                        <path d="M245 225L430 280"/>
+                    </g>
+
+                    <g fill="none" stroke="#d6b778" stroke-width="3">
+                        <path d="M95 135L245 52L430 110"/>
+                        <path d="M95 135L95 310"/>
+                        <path d="M245 52V225"/>
+                        <path d="M430 110V280"/>
+                        <path d="M95 135L245 225L430 110"/>
+                        <path d="M95 310L245 225L280 365"/>
+                        <path d="M245 225L430 280"/>
+                    </g>
+
+                    <g fill="#d6b778">
+                        <circle cx="95" cy="135" r="5"/>
+                        <circle cx="245" cy="52" r="5"/>
+                        <circle cx="430" cy="110" r="5"/>
+                        <circle cx="245" cy="225" r="5"/>
+                        <circle cx="95" cy="310" r="5"/>
+                        <circle cx="280" cy="365" r="5"/>
+                        <circle cx="430" cy="280" r="5"/>
+                    </g>
+
+                    <g fill="#c7d3df" font-family="Arial, sans-serif" font-size="11">
+                        <text x="80" y="120">A1</text>
+                        <text x="238" y="37">A2</text>
+                        <text x="438" y="105">A3</text>
+                        <text x="248" y="246">N1</text>
+                    </g>
+                </svg>
+
+                <div class="visual-bottom">
+                    <span>ESTRUCTURAS · SISTEMAS · PROYECTOS</span>
+                    <span>01 / 03</span>
+                </div>
+
+                <div class="visual-stamp">
+                    <span>ENGINEERING</span>
+                    <strong>NX—01</strong>
+                </div>
+            </div>
+
+            <div class="hero-index">01 — INGENIERÍA APLICADA</div>
+        </section>
+
+        <section class="trust-strip" aria-label="Áreas de enfoque">
+            <span>DISEÑO TÉCNICO</span>
+            <span class="strip-separator">/</span>
+            <span>CÁLCULO DE INGENIERÍA</span>
+            <span class="strip-separator">/</span>
+            <span>OPTIMIZACIÓN</span>
+            <span class="strip-separator">/</span>
+            <span>SOPORTE A PROYECTOS</span>
+        </section>
+
+        <section class="section services-section" id="servicios">
+            <div class="section-heading">
+                <div>
+                    <span class="eyebrow section-eyebrow">01 / QUÉ HACEMOS</span>
+                    <h2>Soluciones para cada<br>desafío técnico.</h2>
+                </div>
+
+                <p>
+                    Acompañamos proyectos con análisis técnico,
+                    documentación y soluciones adaptadas a cada necesidad.
+                </p>
+            </div>
+
+            <div class="services-grid">
+                <article class="service-card">
+                    <span class="service-number">01</span>
+                    <div class="service-icon" aria-hidden="true">⌘</div>
+                    <h3>Diseño y cálculo</h3>
+                    <p>
+                        Desarrollo de soluciones técnicas, verificaciones
+                        y análisis de ingeniería según el alcance del proyecto.
+                    </p>
+                    <a href="#contacto" class="text-link">
+                        Consultar servicio <span>↗</span>
+                    </a>
+                </article>
+
+                <article class="service-card">
+                    <span class="service-number">02</span>
+                    <div class="service-icon" aria-hidden="true">⌗</div>
+                    <h3>Ingeniería industrial</h3>
+                    <p>
+                        Soporte técnico para instalaciones, equipos,
+                        sistemas y necesidades de proyectos industriales.
+                    </p>
+                    <a href="#contacto" class="text-link">
+                        Consultar servicio <span>↗</span>
+                    </a>
+                </article>
+
+                <article class="service-card">
+                    <span class="service-number">03</span>
+                    <div class="service-icon" aria-hidden="true">↗</div>
+                    <h3>Optimización técnica</h3>
+                    <p>
+                        Evaluación de alternativas para mejorar el diseño,
+                        el uso de materiales y la eficiencia de las soluciones.
+                    </p>
+                    <a href="#contacto" class="text-link">
+                        Consultar servicio <span>↗</span>
+                    </a>
+                </article>
+
+                <article class="service-card">
+                    <span class="service-number">04</span>
+                    <div class="service-icon" aria-hidden="true">▤</div>
+                    <h3>Documentación técnica</h3>
+                    <p>
+                        Preparación de entregables de ingeniería, planos,
+                        informes y documentación conforme al alcance acordado.
+                    </p>
+                    <a href="#contacto" class="text-link">
+                        Consultar servicio <span>↗</span>
+                    </a>
+                </article>
+            </div>
+        </section>
+
+        <section class="about-section" id="nosotros">
+            <div class="about-mark" aria-hidden="true">
+                <span>N</span>
+                <span>X</span>
+            </div>
+
+            <div class="about-content">
+                <span class="eyebrow section-eyebrow">02 / NUESTRA FILOSOFÍA</span>
+                <h2>El criterio técnico<br>marca la diferencia.</h2>
+                <p>
+                    Cada proyecto requiere comprender el problema, evaluar
+                    alternativas y desarrollar una solución técnicamente
+                    consistente. Ese es el enfoque que buscamos aportar
+                    en cada trabajo.
+                </p>
+
+                <a class="button button-light" href="#contacto">
+                    Hablemos de tu proyecto <span>↗</span>
+                </a>
+            </div>
+
+            <div class="about-side-note">
+                <span>ENFOQUE</span>
+                <strong>Precisión</strong>
+                <strong>Eficiencia</strong>
+                <strong>Confiabilidad</strong>
+            </div>
+        </section>
+
+        <section class="section capabilities-section" id="proyectos">
+            <div class="section-heading">
+                <div>
+                    <span class="eyebrow section-eyebrow">03 / CAPACIDADES</span>
+                    <h2>Del análisis<br>a la solución.</h2>
+                </div>
+
+                <p>
+                    Una metodología orientada a entender las necesidades,
+                    fundamentar las decisiones y entregar resultados claros.
+                </p>
+            </div>
+
+            <div class="process-grid">
+                <article class="process-item">
+                    <span>01</span>
+                    <h3>Comprender</h3>
+                    <p>Definimos el problema, los requisitos y el alcance.</p>
+                </article>
+
+                <article class="process-item">
+                    <span>02</span>
+                    <h3>Analizar</h3>
+                    <p>Evaluamos condiciones, restricciones y alternativas.</p>
+                </article>
+
+                <article class="process-item">
+                    <span>03</span>
+                    <h3>Desarrollar</h3>
+                    <p>Construimos una solución técnica documentada.</p>
+                </article>
+
+                <article class="process-item">
+                    <span>04</span>
+                    <h3>Entregar</h3>
+                    <p>Presentamos los resultados acordados con claridad.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="contact-section" id="contacto">
+            <div class="contact-content">
+                <span class="eyebrow">04 / CONTACTO</span>
+                <h2>¿Tenés un proyecto<br>en mente?</h2>
+                <p>
+                    Contanos qué necesitás resolver y conversemos
+                    sobre el alcance de tu proyecto.
+                </p>
+            </div>
+
+            <form class="contact-form" id="contact-form">
+                <label for="nombre">Nombre</label>
+                <input
+                    type="text"
+                    id="nombre"
+                    name="nombre"
+                    placeholder="Tu nombre"
+                    autocomplete="name"
+                    required
+                >
+
+                <label for="email">Correo electrónico</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="nombre@empresa.com"
+                    autocomplete="email"
+                    required
+                >
+
+                <label for="servicio">¿En qué podemos ayudarte?</label>
+                <select id="servicio" name="servicio" required>
+                    <option value="">Seleccioná un servicio</option>
+                    <option>Diseño y cálculo</option>
+                    <option>Ingeniería industrial</option>
+                    <option>Optimización técnica</option>
+                    <option>Documentación técnica</option>
+                    <option>Otro proyecto</option>
+                </select>
+
+                <label for="detalle">Descripción del proyecto</label>
+                <textarea
+                    id="detalle"
+                    name="detalle"
+                    rows="4"
+                    placeholder="Contanos brevemente qué necesitás..."
+                    required
+                ></textarea>
+
+                <button class="button button-primary form-button" type="submit">
+                    Preparar consulta <span>↗</span>
+                </button>
+
+                <p class="form-note" id="form-message" aria-live="polite">
+                    Se abrirá tu aplicación de correo para enviar la consulta.
+                </p>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <a class="brand footer-brand" href="#inicio">
+            <span class="brand-icon">
+                <svg viewBox="0 0 40 40" aria-hidden="true">
+                    <path d="M7 31V9L33 31V9" />
+                    <path d="M7 20H20" />
+                </svg>
+            </span>
+
+            <span class="brand-text">
+                <strong>NEXO</strong>
+                <small>INGENIERÍA & CONSULTORÍA</small>
+            </span>
+        </a>
+
+        <p>Ingeniería con criterio. Soluciones con propósito.</p>
+        <a href="#inicio" class="back-to-top">VOLVER ARRIBA ↑</a>
+        <span class="copyright">© <span id="year"></span> NEXO Ingeniería</span>
+    </footer>
+</body>
+</html>
