@@ -158,42 +158,43 @@ if ("IntersectionObserver" in window) {
 }
 
 
+
 /* ========================================
    6. FORMULARIO DE CONTACTO
 ======================================== */
 
-// CAMBIAR por tu correo comercial antes de publicar.
-const contactEmail = "tuemail@ejemplo.com";
+const formspreeEndpoint = "https://formspree.io/f/mwllvekk";
 
 const contactForm = document.getElementById("contact-form");
 const formMessage = document.getElementById("form-message");
 const serviceSelect = document.getElementById("servicio");
+const submitButton = contactForm.querySelector('button[type="submit"]');
 
 function showFormMessage(text, state) {
     formMessage.textContent = text;
     formMessage.dataset.state = state || "";
 }
 
-// Al consultar un servicio desde su tarjeta, se preselecciona en el formulario.
+// Preseleccionar el servicio desde las tarjetas.
 document.querySelectorAll("[data-service]").forEach(function (link) {
     link.addEventListener("click", function () {
         serviceSelect.value = link.dataset.service;
     });
 });
 
-// Quita el estado de error en cuanto el usuario corrige el campo.
+// Quitar errores cuando el usuario corrige un campo.
 contactForm.addEventListener("input", function (event) {
     event.target.removeAttribute("aria-invalid");
 
     if (formMessage.dataset.state === "error") {
         showFormMessage(
-            "Se abrirá tu aplicación de correo para enviar la consulta.",
+            "Completá el formulario y enviá tu consulta.",
             ""
         );
     }
 });
 
-contactForm.addEventListener("submit", function (event) {
+contactForm.addEventListener("submit", async function (event) {
     event.preventDefault();
 
     if (!contactForm.checkValidity()) {
@@ -212,46 +213,40 @@ contactForm.addEventListener("submit", function (event) {
         return;
     }
 
-    // Evita abrir un correo dirigido a una dirección ficticia.
-    if (contactEmail === "tuemail@ejemplo.com") {
+    const originalButtonHTML = submitButton.innerHTML;
+
+    submitButton.disabled = true;
+    submitButton.textContent = "Enviando consulta...";
+
+    showFormMessage("Enviando tu consulta...", "");
+
+    try {
+        const response = await fetch(formspreeEndpoint, {
+            method: "POST",
+            body: new FormData(contactForm),
+            headers: {
+                Accept: "application/json"
+            }
+        });
+
+        if (!response.ok) {
+            throw new Error("No se pudo enviar el formulario.");
+        }
+
+        contactForm.reset();
+
         showFormMessage(
-            "El formulario funciona, pero primero tenés que configurar " +
-            "tu correo comercial en script.js.",
+            "¡Gracias por contactarnos! Recibimos tu consulta y te responderemos a la brevedad.",
+            "success"
+        );
+    } catch (error) {
+        showFormMessage(
+            "No pudimos enviar tu consulta. Intentá nuevamente o escribinos por correo.",
             "error"
         );
-
-        return;
+    } finally {
+        submitButton.disabled = false;
+        submitButton.innerHTML = originalButtonHTML;
     }
-
-    const formData = new FormData(contactForm);
-
-    const nombre = String(formData.get("nombre")).trim();
-    const email = String(formData.get("email")).trim();
-    const servicio = String(formData.get("servicio")).trim();
-    const detalle = String(formData.get("detalle")).trim();
-
-    const subject = encodeURIComponent(
-        "Consulta de ingeniería - " + nombre
-    );
-
-    const body = encodeURIComponent(
-        "Nueva consulta desde la web\n\n" +
-        "Nombre: " + nombre + "\n" +
-        "Correo: " + email + "\n" +
-        "Servicio: " + servicio + "\n\n" +
-        "Descripción del proyecto:\n" + detalle
-    );
-
-    const mailtoLink =
-        "mailto:" + contactEmail +
-        "?subject=" + subject +
-        "&body=" + body;
-
-    showFormMessage(
-        "Abriendo tu aplicación de correo. Si no se abre, escribinos a " +
-        contactEmail + ".",
-        "success"
-    );
-
-    window.location.href = mailtoLink;
 });
+
